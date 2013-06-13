@@ -1,0 +1,400 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31056FF1-21FC-4EB7-AEE4-EE1D5BD33E17}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DView.SXEQJB.TempleteMgr</RootNamespace>
+    <AssemblyName>DView.SXEQJB.TempleteMgr</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 2009.1\\Components\Sources\DevExpress.DLL\DevExpress.XtraBars.v9.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v9.1.Core, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v9.1.Extensions, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 2009.1\\Components\Sources\DevExpress.DLL\DevExpress.XtraScheduler.v9.1.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v9.1.Core, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=5377c8e3b72b4073, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 2009.1\\Components\Sources\DevExpress.DLL\DevExpress.XtraTreeList.v9.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Office, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClass.cs" />
+    <Compile Include="Controls\CategoriesTreeList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CategoriesTreeList.designer.cs">
+      <DependentUpon>CategoriesTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TempleteTableCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TempleteTableCtl.Designer.cs">
+      <DependentUpon>TempleteTableCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImportTempleteCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ImportTempleteCtl.Designer.cs">
+      <DependentUpon>ImportTempleteCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TempMgrCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TempMgrCtl.Designer.cs">
+      <DependentUpon>TempMgrCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dal\SXEQ_JBLB.cs" />
+    <Compile Include="Dal\SXEQ_JBMB.cs" />
+    <Compile Include="Dal\DbHelperOra.cs" />
+    <Compile Include="Frm\FrmQueryCloseWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmQueryCloseWord.Designer.cs">
+      <DependentUpon>FrmQueryCloseWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmPreViewTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmPreViewTemp.Designer.cs">
+      <DependentUpon>FrmPreViewTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmQueryCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmQueryCus.Designer.cs">
+      <DependentUpon>FrmQueryCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmTempEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmTempEdit.Designer.cs">
+      <DependentUpon>FrmTempEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\CategoriesTreeList.resx">
+      <DependentUpon>CategoriesTreeList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TempleteTableCtl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TempleteTableCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ImportTempleteCtl.resx">
+      <DependentUpon>ImportTempleteCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TempMgrCtl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TempMgrCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmQueryCloseWord.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmQueryCloseWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmImportTemp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmImportTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmPreViewTemp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPreViewTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmQueryCus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmQueryCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmTempEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTempEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmTempMgr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmTempMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TempleteMgr.cs" />
+    <Compile Include="Frm\FrmImportTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmImportTemp.Designer.cs">
+      <DependentUpon>FrmImportTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\FrmTempMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmTempMgr.Designer.cs">
+      <DependentUpon>FrmTempMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonUtl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\08_Info_Query.png" />
+    <None Include="Resources\09_Info_Stat.png" />
+    <None Include="Resources\10_EQ_Doc.png" />
+    <None Include="Resources\12_reportmanage.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add2.png" />
+    <None Include="Resources\background.png" />
+    <None Include="Resources\background1.png" />
+    <None Include="Resources\color_swatch.png" />
+    <None Include="Resources\color_swatch_16.png" />
+    <None Include="Resources\colours.png" />
+    <None Include="Resources\colours_16.png" />
+    <None Include="Resources\favorite.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\help_16.png" />
+    <None Include="Resources\I_road_closed.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout_16.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\star_16.png" />
+    <None Include="Resources\Thumbs.db" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\w_close_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThemeMap.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customize_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxDSOFramer">
+      <Guid>{00460180-9E5E-11D5-B7C8-B8269041DD57}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="DSOFramer">
+      <Guid>{00460180-9E5E-11D5-B7C8-B8269041DD57}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload2_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\upload3_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save as_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save as_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save as 2_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save as 2_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backcolor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_backcolor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_backColor_Ctl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_color_big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csdn - 副本.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_backColor_new.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_btn - 副本.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_btn2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify_btn3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del_btn_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customize_btn_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyButton.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
