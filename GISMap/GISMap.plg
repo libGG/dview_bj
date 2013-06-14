@@ -1,0 +1,164 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GISMap - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/GISMap.res" /d "_DEBUG" /d "_AFXDLL" "C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GISMap.rc"" 
+Creating temporary file "C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP49.tmp" with contents
+[
+/nologo /MDd /w /W0 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/GISMap.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GISMap.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GISMapDoc.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GISMapView.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\MainFrm.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\CMouseEvent.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\CViewCtrlMouseListener.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\MapControl.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\ShpRender.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP49.tmp" 
+Creating temporary file "C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4A.tmp" with contents
+[
+/nologo /MDd /w /W0 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\DataSet.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\DataSource.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\Feature.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\FeatureClass.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\Field.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\Fields.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\FieldValue.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GeoAnnotation.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GeoPoint.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GeoPoints.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GeoPolygon.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\GeoPolyline.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\Row.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\Table.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\CMouseListeners.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\LayerProperty.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\Layers.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\MapLayer.cpp"
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\MapProperty.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4A.tmp" 
+Creating temporary file "C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4B.tmp" with contents
+[
+/nologo /MDd /w /W0 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/GISMap.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\Shawn\桌面\G_shp_口令ws\GISMap\GISMap\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4B.tmp" 
+Creating temporary file "C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/GISMap.pdb" /debug /machine:I386 /out:"Debug/GISMap.exe" /pdbtype:sept 
+".\Debug\GISMap.obj"
+".\Debug\GISMapDoc.obj"
+".\Debug\GISMapView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\StdAfx.obj"
+".\Debug\DataSet.obj"
+".\Debug\DataSource.obj"
+".\Debug\Feature.obj"
+".\Debug\FeatureClass.obj"
+".\Debug\Field.obj"
+".\Debug\Fields.obj"
+".\Debug\FieldValue.obj"
+".\Debug\GeoAnnotation.obj"
+".\Debug\GeoPoint.obj"
+".\Debug\GeoPoints.obj"
+".\Debug\GeoPolygon.obj"
+".\Debug\GeoPolyline.obj"
+".\Debug\Row.obj"
+".\Debug\Table.obj"
+".\Debug\CMouseEvent.obj"
+".\Debug\CMouseListeners.obj"
+".\Debug\CViewCtrlMouseListener.obj"
+".\Debug\LayerProperty.obj"
+".\Debug\Layers.obj"
+".\Debug\MapControl.obj"
+".\Debug\MapLayer.obj"
+".\Debug\MapProperty.obj"
+".\Debug\ShpRender.obj"
+".\Debug\GISMap.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4C.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+GISMap.cpp
+GISMapDoc.cpp
+GISMapView.cpp
+MainFrm.cpp
+CMouseEvent.cpp
+CViewCtrlMouseListener.cpp
+MapControl.cpp
+ShpRender.cpp
+Generating Code...
+Compiling...
+DataSet.cpp
+DataSource.cpp
+Feature.cpp
+FeatureClass.cpp
+Field.cpp
+Fields.cpp
+FieldValue.cpp
+GeoAnnotation.cpp
+GeoPoint.cpp
+GeoPoints.cpp
+GeoPolygon.cpp
+GeoPolyline.cpp
+Row.cpp
+Table.cpp
+CMouseListeners.cpp
+LayerProperty.cpp
+Layers.cpp
+MapLayer.cpp
+MapProperty.cpp
+Generating Code...
+Linking...
+Creating temporary file "C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4E.tmp" with contents
+[
+/nologo /o"Debug/GISMap.bsc" 
+".\Debug\StdAfx.sbr"
+".\Debug\GISMap.sbr"
+".\Debug\GISMapDoc.sbr"
+".\Debug\GISMapView.sbr"
+".\Debug\MainFrm.sbr"
+".\Debug\DataSet.sbr"
+".\Debug\DataSource.sbr"
+".\Debug\Feature.sbr"
+".\Debug\FeatureClass.sbr"
+".\Debug\Field.sbr"
+".\Debug\Fields.sbr"
+".\Debug\FieldValue.sbr"
+".\Debug\GeoAnnotation.sbr"
+".\Debug\GeoPoint.sbr"
+".\Debug\GeoPoints.sbr"
+".\Debug\GeoPolygon.sbr"
+".\Debug\GeoPolyline.sbr"
+".\Debug\Row.sbr"
+".\Debug\Table.sbr"
+".\Debug\CMouseEvent.sbr"
+".\Debug\CMouseListeners.sbr"
+".\Debug\CViewCtrlMouseListener.sbr"
+".\Debug\LayerProperty.sbr"
+".\Debug\Layers.sbr"
+".\Debug\MapControl.sbr"
+".\Debug\MapLayer.sbr"
+".\Debug\MapProperty.sbr"
+".\Debug\ShpRender.sbr"]
+Creating command line "bscmake.exe @C:\DOCUME~1\Shawn\LOCALS~1\Temp\RSP4E.tmp"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+GISMap.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

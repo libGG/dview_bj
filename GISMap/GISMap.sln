@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GISMap", "GISMap.vcproj", "{128E7C88-E0B6-46F8-87C1-8DCDB8459EF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项目", "解决方案项目", "{AE7699EB-EE70-43A2-B27E-A77D6BB36F1B}"
+	ProjectSection(SolutionItems) = preProject
+		GISMap.vsd = GISMap.vsd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{128E7C88-E0B6-46F8-87C1-8DCDB8459EF8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{128E7C88-E0B6-46F8-87C1-8DCDB8459EF8}.Debug|Win32.Build.0 = Debug|Win32
+		{128E7C88-E0B6-46F8-87C1-8DCDB8459EF8}.Release|Win32.ActiveCfg = Release|Win32
+		{128E7C88-E0B6-46F8-87C1-8DCDB8459EF8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
