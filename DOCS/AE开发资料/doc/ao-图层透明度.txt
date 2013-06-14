@@ -1,0 +1,20 @@
+关于设置图层透明度
+关于设置图层透明度
+作者：http://b… 文章来源：http://bbs.esrichina-bj.cn 点击数：44 更新时间：2008-12-24 9:00:41
+
+ILayerEffects pLayerEffects = pLayer as ILayerEffects;
+pLayerEffects.Transparency = 数值;
+
+ 
+
+2.
+还有一种方法是用属性字段设值；
+也就是用渲染的方法。
+      ISimpleRenderer pSimpleRenderer=new SimpleRendererClass();
+            pSimpleRenderer.Symbol = pSymbol;
+            ITransparencyRenderer pTransparencyRenderer=pSimpleRenderer as ITransparencyRenderer;
+            pTransparencyRenderer.TransparencyField = "Transparen";//设置透明
+            
+            IGeoFeatureLayer pGeoFeatureLayer = pFeatureLayer as IGeoFeatureLayer;
+            IFeatureRenderer pFeatureRenderer = pSimpleRenderer as IFeatureRenderer;
+            pGeoFeatureLayer.Renderer = pFeatureRenderer;

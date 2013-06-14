@@ -1,0 +1,818 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E717A1C-36DD-4D23-A88E-EAE3C6C873F3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Controls</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Controls</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>Controls.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst">
+      <Name>ESRI.ArcGIS.3DAnalyst</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.3DAnalyst.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.2.0.1263, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=9.2.0.1324, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.AxLicenseControl">
+      <Name>esri.arcgis.axlicensecontrol</Name>
+      <HintPath>..\..\..\..\..\..\..\program files\arcgis\dotnet\esri.arcgis.axlicensecontrol.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxMapControl">
+      <Name>ESRI.ArcGIS.AxMapControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.AxMapControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxPageLayoutControl">
+      <Name>ESRI.ArcGIS.AxPageLayoutControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.AxPageLayoutControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxSceneControl">
+      <Name>ESRI.ArcGIS.AxSceneControl</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.AxSceneControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxTOCControl">
+      <Name>ESRI.ArcGIS.AxTOCControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.AxTOCControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxToolbarControl">
+      <Name>ESRI.ArcGIS.AxToolbarControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.AxToolbarControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto">
+      <Name>ESRI.ArcGIS.Carto</Name>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Carto.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.2.0.1263, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile">
+      <Name>ESRI.ArcGIS.DataSourcesFile</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB">
+      <Name>ESRI.ArcGIS.DataSourcesGDB</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB">
+      <Name>ESRI.ArcGIS.DataSourcesOleDB</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.DataSourcesOleDB.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster">
+      <Name>ESRI.ArcGIS.DataSourcesRaster</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.DataSourcesRaster.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display">
+      <Name>ESRI.ArcGIS.Display</Name>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Display.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst">
+      <Name>ESRI.ArcGIS.GeoAnalyst</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.GeoAnalyst.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase">
+      <Name>ESRI.ArcGIS.Geodatabase</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed">
+      <Name>ESRI.ArcGIS.GeoDatabaseDistributed</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.GeoDatabaseDistributed.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry">
+      <Name>ESRI.ArcGIS.Geometry</Name>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Geometry.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoStatisticalAnalyst">
+      <Name>ESRI.ArcGIS.GeoStatisticalAnalyst</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.GeoStatisticalAnalyst.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GISClient">
+      <Name>ESRI.ArcGIS.GISClient</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.GISClient.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore">
+      <Name>ESRI.ArcGIS.GlobeCore</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.GlobeCore.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.LicenseControl">
+      <Name>ESRI.ArcGIS.LicenseControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.LicenseControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Location">
+      <Name>ESRI.ArcGIS.Location</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Location.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.MapControl">
+      <Name>ESRI.ArcGIS.MapControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.MapControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.NetworkAnalysis">
+      <Name>ESRI.ArcGIS.NetworkAnalysis</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.NetworkAnalysis.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.NetworkAnalyst">
+      <Name>ESRI.ArcGIS.NetworkAnalyst</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.NetworkAnalyst.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output">
+      <Name>ESRI.ArcGIS.Output</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Output.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.PageLayoutControl">
+      <Name>ESRI.ArcGIS.PageLayoutControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.PageLayoutControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SceneControl">
+      <Name>ESRI.ArcGIS.SceneControl</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.SceneControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Server">
+      <Name>ESRI.ArcGIS.Server</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Server.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalyst">
+      <Name>ESRI.ArcGIS.SpatialAnalyst</Name>
+      <HintPath>C:\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.SpatialAnalyst.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System">
+      <Name>ESRI.ArcGIS.System</Name>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.System.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI">
+      <Name>ESRI.ArcGIS.SystemUI</Name>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.SystemUI.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.TOCControl">
+      <Name>ESRI.ArcGIS.TOCControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.TOCControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ToolbarControl">
+      <Name>ESRI.ArcGIS.ToolbarControl</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.ToolbarControl.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcengine</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Utility">
+      <Name>ESRI.ArcGIS.Utility</Name>
+      <HintPath>..\..\..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.Utility.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\arcgis desktop</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="QueryControl">
+      <Name>QueryControl</Name>
+      <HintPath>..\..\pointQuery\QueryControl\QueryControl\bin\QueryControl.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole">
+      <Name>stdole</Name>
+      <HintPath>C:\Program Files\Microsoft.NET\Primary Interop Assemblies\stdole.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clsProfileStruct.cs" />
+    <Compile Include="ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboxBoxExItem.cs" />
+    <Compile Include="DisconnectEditingFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtentUpdatedEventArgs.cs" />
+    <Compile Include="frm3DAnalyst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm3DAnalyst.Designer.cs">
+      <DependentUpon>frm3DAnalyst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSDEData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSDEData.Designer.cs">
+      <DependentUpon>frmAddSDEData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAllocation.Designer.cs">
+      <DependentUpon>frmAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnalysisOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAspect.Designer.cs">
+      <DependentUpon>frmAspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBurstReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBurstReport.Designer.cs">
+      <DependentUpon>frmBurstReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCellStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCellStatistic.Designer.cs">
+      <DependentUpon>frmCellStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangeVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeVersion.Designer.cs">
+      <DependentUpon>frmChangeVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClosestFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContour.Designer.cs">
+      <DependentUpon>frmContour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCostWeightLineDis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCRNetASetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCRNetASetting.Designer.cs">
+      <DependentUpon>frmCRNetASetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCutFill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCutFill.Designer.cs">
+      <DependentUpon>frmCutFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDensity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrawProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrawProfile.Designer.cs">
+      <DependentUpon>frmDrawProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFeatureToRaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeatureToRaster.Designer.cs">
+      <DependentUpon>frmFeatureToRaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlobeControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGlobeControl.Designer.cs">
+      <DependentUpon>frmGlobeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHillShade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHillShade.Designer.cs">
+      <DependentUpon>frmHillShade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoadLocations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoadNetworkData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoadNetworkData.Designer.cs">
+      <DependentUpon>frmLoadNetworkData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNetAnalystSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNetAnalystSetting.Designer.cs">
+      <DependentUpon>frmNetAnalystSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPointQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRasterCalculate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRasterCalculate.Designer.cs">
+      <DependentUpon>frmRasterCalculate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRasterIDW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRasterSpline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRasterToFeature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRasterToFeature.Designer.cs">
+      <DependentUpon>frmRasterToFeature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetLayerTips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetLayerTips.Designer.cs">
+      <DependentUpon>frmSetLayerTips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShortestPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSlope.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSlope.Designer.cs">
+      <DependentUpon>frmSlope.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStraightLineDis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSymbolSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSymbolSet.Designer.cs">
+      <DependentUpon>frmSymbolSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpstreamCreateOwnerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpstreamCreateOwnerList.Designer.cs">
+      <DependentUpon>frmUpstreamCreateOwnerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUtilityImageMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUtilityImageMap.Designer.cs">
+      <DependentUpon>frmUtilityImageMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewshed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewshed.Designer.cs">
+      <DependentUpon>frmViewshed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GISHelperFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LicenseInitializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LoadLocations.cs" />
+    <Compile Include="Mainfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModPublicClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="moveFeatureTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="rpaulo\toolbar\AllowedBorders.cs" />
+    <Compile Include="rpaulo\toolbar\DockLocation.cs" />
+    <Compile Include="rpaulo\toolbar\ToolBarDockArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="rpaulo\toolbar\ToolBarDockHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="rpaulo\toolbar\ToolBarManager.cs" />
+    <Compile Include="SelectedFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="slovePathTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpatialAnalysisOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpatialHelperFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TOCHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UpStreamTrace.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="ComboBoxEx.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComboBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm3DAnalyst.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm3DAnalyst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSDEData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddSDEData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAllocation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnalysisOption.resx">
+      <DependentUpon>frmAnalysisOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAspect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBurstReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBurstReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCellStatistic.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCellStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeVersion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmChangeVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClosestFacility.resx">
+      <DependentUpon>frmClosestFacility.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContour.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmContour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCostWeightLineDis.resx">
+      <DependentUpon>frmCostWeightLineDis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCRNetASetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCRNetASetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCutFill.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCutFill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDensity.resx">
+      <DependentUpon>frmDensity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDrawProfile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDrawProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeatureToRaster.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFeatureToRaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFind.resx">
+      <DependentUpon>frmFind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGlobeControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGlobeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHillShade.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmHillShade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoadLocations.resx">
+      <DependentUpon>frmLoadLocations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoadNetworkData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLoadNetworkData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNetAnalystSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNetAnalystSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPointQuery.resx">
+      <DependentUpon>frmPointQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRasterCalculate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRasterCalculate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRasterIDW.resx">
+      <DependentUpon>frmRasterIDW.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRasterSpline.resx">
+      <DependentUpon>frmRasterSpline.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRasterToFeature.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRasterToFeature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoute.resx">
+      <DependentUpon>frmRoute.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetLayerTips.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetLayerTips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShortestPath.resx">
+      <DependentUpon>frmShortestPath.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSlope.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSlope.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStraightLineDis.resx">
+      <DependentUpon>frmStraightLineDis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSymbolSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSymbolSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpstreamCreateOwnerList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUpstreamCreateOwnerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUtilityImageMap.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUtilityImageMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewshed.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmViewshed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainfrm.resx">
+      <DependentUpon>Mainfrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpaulo\toolbar\ToolBarDockArea.resx">
+      <DependentUpon>ToolBarDockArea.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rpaulo\toolbar\ToolBarDockHolder.resx">
+      <DependentUpon>ToolBarDockHolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adddata.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="esriAnimation">
+      <Guid>{643D491A-D5BD-4788-B610-A0F53CBA0940}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriCarto">
+      <Guid>{45AC68FF-DEFF-4884-B3A9-7D882EDCAEF1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriDataSourcesNetCDF">
+      <Guid>{28ED84CD-FB06-41A0-9A55-E196441D169A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriDisplay">
+      <Guid>{59FCCD31-434C-4017-BDEF-DB4B7EDC9CE0}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriGeoDatabaseExtensions">
+      <Guid>{7BA654FE-F55E-4EE5-8CF2-FAEFFBC04A61}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriGeometry">
+      <Guid>{C4B094C2-FF32-4FA1-ABCB-7820F8D6FB68}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriGeoprocessing">
+      <Guid>{C031A050-82C6-4F8F-8836-5692631CFFE6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriOutput">
+      <Guid>{7DB92CEC-CB65-420A-8737-FCD0722FD436}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriSystem">
+      <Guid>{5E1F7BC3-67C5-4AEE-8EC6-C4B73AAC42ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="esriSystemUI">
+      <Guid>{4ECCA6E2-B16B-4ACA-BD17-E74CAE4C150A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSComctlLib">
+      <Guid>{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\Unique.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ESRIImportCache="ESRI.ArcGIS.Controls" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

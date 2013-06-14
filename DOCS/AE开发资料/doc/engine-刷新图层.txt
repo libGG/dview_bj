@@ -1,0 +1,24 @@
+AE中图层刷新的最新理解--和大家分享
+AE中图层刷新的最新理解--和大家分享
+作者：http://b… 文章来源：http://bbs.esrichina-bj.cn 点击数：50 更新时间：2008-12-24 8:59:06
+这几天在看AE开发的e文，颇有收获，以前遇到刷新的问题很困惑，现在终于有了一个比较详细的理解，和大家分享！
+刷新图层：
+pMap.PartialRefresh(esriViewGeography, pLayer, null);  
+
+刷新所有图层：
+pMap.PartialRefresh(esriViewGeography, null, null);  
+
+刷新所选择的对象：
+pMap.PartialRefresh(esriViewGeoSelection, null, null);  
+
+刷新标注：
+pMap.PartialRefresh(esriViewGraphics, null, null);  
+
+刷新图元
+pLayout.PartialRefresh(esriViewGraphics, pElement, null);  
+
+刷新所有图元
+pLayout.PartialRefresh(esriViewGraphics, null, null);  
+
+刷新所选择的图元
+pLayout.PartialRefresh(esriViewGraphicSelection, null, null); 

@@ -1,0 +1,81 @@
+style样式 转为图片!!
+style样式 转为图片!!
+作者：佚名 文章来源：本站原创 点击数：24 更新时间：2008-11-14 10:59:57
+
+有过这样的苦恼嚒?好看的地图图标想做图层树的节点图案,如何才能将已经是style的图标样式转为一个小图片呢??以下的代码可以帮助你解决!!
+
+public System.Drawing.Bitmap SymbolToBitmp(ESRI.ArcGIS.Display.ISymbol pSymbol, int iwidth, int iheight)
+        {
+            //根据高宽创建图象
+            Bitmap bmp = new Bitmap(iwidth, iheight);
+            Graphics gImage = Graphics.FromImage(bmp);
+            gImage.Clear(Color.White);
+            double dpi = gImage.DpiX;
+            IEnvelope pEnvelope = new EnvelopeClass();
+            pEnvelope.PutCoords(0, 0, (double)bmp.Width, (double)bmp.Height);
+
+            tagRECT deviceRect;
+            deviceRect.left = 0;
+            deviceRect.right = bmp.Width;
+            deviceRect.top = 0;
+            deviceRect.bottom = bmp.Height;
+
+            IDisplayTransformation pDisplayTransformation = new DisplayTransformationClass();
+            pDisplayTransformation.VisibleBounds = pEnvelope;
+            pDisplayTransformation.Bounds = pEnvelope;
+            pDisplayTransformation.set_DeviceFrame(ref deviceRect);
+            pDisplayTransformation.Resolution = dpi;
+
+            IGeometry pGeo = CreateSymShape(pSymbol, pEnvelope);
+
+            System.IntPtr hdc = new IntPtr();
+            hdc = gImage.GetHdc();
+
+            //将符号的形状绘制到图象中
+            pSymbol.SetupDC((int)hdc, pDisplayTransformation);
+            pSymbol.Draw(pGeo);
+            pSymbol.ResetDC();
+            gImage.ReleaseHdc(hdc);
+            gImage.Dispose();
+
+            return bmp;
+
+        }
+        public ESRI.ArcGIS.Geometry.IGeometry CreateSymShape(ISymbol pSymbol, IEnvelope pEnvelope)
+        {// 根据传入的符号以及外包矩形区域返回对应的几何空间实体（点，线、面）
+            //判断是否为“点”符号
+            ESRI.ArcGIS.Display.IMarkerSymbol IMarkerSym;
+            IMarkerSym = pSymbol as IMarkerSymbol;
+            if (IMarkerSym != null)
+            {
+                // 为“点”符号则返回IEnvelope的中心点
+                IArea pArea;
+                pArea = pEnvelope as IArea;
+                return pArea.Centroid as IGeometry;
+            }
+            else
+            {
+                //判断是否为“线”符号
+                ESRI.ArcGIS.Display.ILineSymbol IlineSym;
+                ESRI.ArcGIS.Display.ITextSymbol ITextSym;
+                IlineSym = pSymbol as ILineSymbol;
+                ITextSym = pSymbol as ITextSymbol;
+                if (IlineSym != null || ITextSym != null)
+                {
+                    //返回45度的对角线
+                    ESRI.ArcGIS.Geometry.IPolyline IpLine;
+                    IpLine = new PolylineClass();
+                    IpLine.FromPoint = pEnvelope.LowerLeft;
+                    IpLine.ToPoint = pEnvelope.UpperRight;
+                    return IpLine as IGeometry;
+                }
+                else
+                {
+                    //直接返回一个IEnvelope矩形区域
+                    return pEnvelope as IGeometry;
+                }
+            }
+        }
+
+
+看看,是不是很简单?!?!

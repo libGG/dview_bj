@@ -1,0 +1,39 @@
+从地理坐标系（经纬度）转换到北京54坐标系
+从地理坐标系（经纬度）转换到北京54坐标系
+作者：佚名 文章来源：本站原创 点击数：27 更新时间：2008-11-14 11:00:57
+
+public static void ConvertJWDToBeijing (ref double jd,ref double wd)
+   {
+   //其中x,y为上经纬坐标,由用户自己输入;
+   double m,n;//m,n分别代表全国54坐标
+
+   double g=0.00669342162297;
+   double x0 = 3458144.04,y0 = -146121.96,h = 1.000140682,f = 0.013930556;
+   double ll,X,t,N,a=6378245.00,W,p=206265,z,l,b=6356863.01877,c=6399689.90178,k;
+
+   double x = wd;
+   double y = jd;
+   double DH = 41.0;
+
+   double L = 123.0;//(DH - 0.5) * 3.;
+
+   ll = x*PI/180;
+   k = x*3600;
+   l = (y - L)*PI/180;
+   z = Math.Sqrt((0.00673852541468))*Math.Cos(ll);
+   W = Math.Sqrt(1-g*Math.Pow(Math.Sin(ll),2));
+   N = a/W;
+   t = Math.Tan(ll);
+   double mm1 =(Math.Pow(Math.Cos(ll),2)*(5-Math.Pow(t,2)+9*Math.Pow(z,2)+4*Math.Pow(z,4))*Math.Pow(l,2))/24;
+   double mm2 =(Math.Pow(Math.Cos(ll),4)*(61-58*Math.Pow(t,2)+Math.Pow(t,4))*Math.Pow(l,4))/720;
+   //克拉索夫斯基椭球的子午线弧长公式;
+   X = 111134.861*x-(32005.7799*Math.Sin(ll)+133.9238*Math.Pow(Math.Sin(ll),3)
+     +0.6973*Math.Pow(Math.Sin(ll),5)+0.0039*Math.Pow(Math.Sin(ll),7))*Math.Cos(ll);
+   m = X + Math.Pow(Math.Cos(ll),2)*t*N*Math.Pow(l,2)*(0.5 + mm1 + mm2);
+
+   n = Math.Cos(ll)*N*l*(1 + (Math.Pow(Math.Cos(ll),2)*(1-Math.Pow(t,2)+Math.Pow(z,2))*Math.Pow(l,2))/6
+     + (Math.Pow(Math.Cos(ll),4)*(5-18*Math.Pow(t,2)+Math.Pow(t,4)+14*Math.Pow(z,2)-58*Math.Pow(z,2)*Math.Pow(t,2))*Math.Pow(l,5))/120);
+
+   jd = m;
+   wd = n + 21000000 + 500000;
+   }

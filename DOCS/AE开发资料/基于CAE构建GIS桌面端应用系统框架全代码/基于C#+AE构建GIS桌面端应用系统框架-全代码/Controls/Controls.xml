@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Controls</name>
+    </assembly>
+    <members>
+        <member name="F:Controls.frmRasterCalculate.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRasterCalculate.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmRasterCalculate.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmGlobeControl.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmGlobeControl.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmGlobeControl.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmBurstReport.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmBurstReport.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmBurstReport.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.SpatialHelperFunction">
+            <summary>
+            SpatialHelperFunction 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmHillShade.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmHillShade.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmHillShade.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmFeatureToRaster.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmFeatureToRaster.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmFeatureToRaster.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmClosestFacility">
+            <summary>
+            frmClosestFacility 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmClosestFacility.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmClosestFacility.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmClosestFacility.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.Utility">
+            <summary>
+            Utility 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmSymbolSet.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmSymbolSet.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmSymbolSet.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:rpaulo.toolbar.ToolBarDockHolder.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Controls.moveFeatureTool">
+            <summary>
+            moveFeatureTool 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Controls.frmRasterSpline">
+            <summary>
+            frmRasterSpline 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmRasterSpline.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRasterSpline.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRasterSpline.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmNetAnalystSetting.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmNetAnalystSetting.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmNetAnalystSetting.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmFind">
+            <summary>
+            frmFind 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmFind.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmFind.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmFind.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.TOCHelper">
+            <summary>
+            TOCHelper 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Controls.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:Controls.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Controls.Properties.Resources.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:MyFunction.GISHelperFunction">
+            <summary>
+            一组常用的GIS功能
+            </summary>
+        </member>
+        <member name="M:MyFunction.GISHelperFunction.loadNetworkData(System.String,ESRI.ArcGIS.Controls.AxMapControl,ESRI.ArcGIS.NetworkAnalyst.INAContext@,System.Windows.Forms.ComboBox,System.Boolean)">
+            <summary>
+            将网络数据添加到地图中
+            </summary>
+            <param name="dataPath">网络数据路径</param>
+            <param name="_mapControl">地图控件</param>
+            <param name="_pNAContext">INAContext</param>
+            <param name="cmbCost">获取网络数据集里面的代价字段</param>
+            <param name="isRoute">是否使用route</param>
+        </member>
+        <member name="M:MyFunction.GISHelperFunction.OpenNetworkDataset(ESRI.ArcGIS.Geodatabase.IWorkspace,System.String)">
+            <summary>
+            打开workspace中的网络数据集
+            </summary>
+            <param name="pWorkspace">一个workspace，workspace可以是shape,access,sde</param>
+            <param name="sNDSName">要打开的网络数据集名字</param>
+            <returns>返回INetworkDataset接口</returns>
+        </member>
+        <member name="T:Controls.frmRasterIDW">
+            <summary>
+            frmRasterIDW 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmRasterIDW.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRasterIDW.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRasterIDW.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmChangeVersion.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmChangeVersion.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmChangeVersion.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmAspect.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAspect.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmAspect.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Newleaf.ExtentUpdatedEventArgs">
+            <summary>
+            ExtentUpdatedEventArgs 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:rpaulo.toolbar.ToolBarDockArea.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Controls.frmCutFill.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmCutFill.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmCutFill.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmAbout">
+            <summary>
+            frmAbout 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmAbout.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAbout.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAbout.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmRoute">
+            <summary>
+            frmRoute 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmRoute.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRoute.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRoute.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmDrawProfile.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmDrawProfile.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmDrawProfile.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmCRNetASetting.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmCRNetASetting.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmCRNetASetting.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:Controls.frmCRNetASetting.SetINASolverSettings(ESRI.ArcGIS.NetworkAnalyst.INASolverSettings2)">
+            <summary>
+            Set general solver settings  (Impedance, Restrictions, Accumulates, etc.)
+            </summary>   
+        </member>
+        <member name="M:Controls.frmCRNetASetting.SetSolverSpecificInterface">
+            <summary>
+            Set specific solver settings  (FindBestSequence, UseTimeWindows, etc.)      
+            </summary>        
+        </member>
+        <member name="F:Controls.frmCellStatistic.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmCellStatistic.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmCellStatistic.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frm3DAnalyst.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frm3DAnalyst.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frm3DAnalyst.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmRasterToFeature.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmRasterToFeature.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmRasterToFeature.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmContour.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmContour.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmContour.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.slovePathTool">
+            <summary>
+            slovePathTool 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Controls.SelectedFeature">
+            <summary>
+            SelectedFeature 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Controls.OnExtentUpdatingHandler">
+            <summary>
+            Summary description for Form1.
+            </summary>
+             
+        </member>
+        <member name="M:Controls.MainFrm.ArcGISCategoryRegistration(System.Type)">
+            <summary>
+            Required method for ArcGIS Component Category registration -
+            Do not modify the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Controls.MainFrm.ArcGISCategoryUnregistration(System.Type)">
+            <summary>
+            Required method for ArcGIS Component Category unregistration -
+            Do not modify the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Controls.MainFrm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Controls.MainFrm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Controls.MainFrm.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:Controls.frmSetLayerTips.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmSetLayerTips.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmSetLayerTips.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmPointQuery">
+            <summary>
+            frmPointQuery 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmPointQuery.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmPointQuery.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmPointQuery.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:NAEngine.frmLoadLocations">
+            <summary>
+            Summary description for frmLoadLocations.
+            </summary>
+        </member>
+        <member name="F:NAEngine.frmLoadLocations.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:NAEngine.frmLoadLocations.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:NAEngine.frmLoadLocations.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Controls.frmAddSDEData.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAddSDEData.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmAddSDEData.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.ModPublicClass">
+            <summary>
+            ModPublicClass 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmViewshed.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmViewshed.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmViewshed.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmLoadNetworkData.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmLoadNetworkData.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmLoadNetworkData.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmShortestPath">
+            <summary>
+            frmShortestPath 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmShortestPath.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmShortestPath.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmShortestPath.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.SpatialAnalysisOption">
+            <summary>
+            SpatialAnalysisOption 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmUtilityImageMap.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmUtilityImageMap.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmUtilityImageMap.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmSlope.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmSlope.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmSlope.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmUpstreamCreateOwnerList.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmUpstreamCreateOwnerList.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmUpstreamCreateOwnerList.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmCostWeightLineDis">
+            <summary>
+            frmCostWeightLineDis 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmCostWeightLineDis.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmCostWeightLineDis.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmCostWeightLineDis.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="F:Controls.frmAllocation.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAllocation.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Controls.frmAllocation.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.UpStreamTrace">
+            <summary>
+            UpStreamTrace,对Geometric Network进行上溯分析，创建于2005.10.8的Z8列车上。
+            </summary>
+        </member>
+        <member name="T:Controls.frmAnalysisOption">
+            <summary>
+            frmAnalysisOption 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmAnalysisOption.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAnalysisOption.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmAnalysisOption.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.frmStraightLineDis">
+            <summary>
+            frmStraightLineDis 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmStraightLineDis.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmStraightLineDis.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmStraightLineDis.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+        <member name="T:Controls.DisconnectEditingFunctions">
+            <summary>
+            DisconnectEditingTool 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:Controls.frmDensity">
+            <summary>
+            frmDensity 的摘要说明。
+            </summary>
+        </member>
+        <member name="F:Controls.frmDensity.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Controls.frmDensity.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:Controls.frmDensity.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要使用代码编辑器修改
+            此方法的内容。
+            </summary>
+        </member>
+    </members>
+</doc>

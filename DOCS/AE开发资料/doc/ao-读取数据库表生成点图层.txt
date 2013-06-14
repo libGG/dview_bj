@@ -1,0 +1,86 @@
+如何把数据库中的一张表，读取成ITable，并生成点图层
+如何把数据库中的一张表，读取成ITable，并生成点图层
+作者：http://b… 文章来源：http://bbs.esrichina-bj.cn 点击数：69 更新时间：2008-12-24 8:55:02
+/// <summary>
+        /// 从包含XY坐标的datatable创建点数据集
+        /// </summary>
+        /// <param name="dt">包含XY坐标的datatable</param>
+        /// <param name="XFieldName">X坐标的FieldName</param>
+        /// <param name="YFieldName">Y坐标的FieldName</param>
+        /// <param name="NameFieldName">附加属性字段的FieldName</param>
+        /// <param name="DirPath">保存到的文件夹，如“F:\temp”</param>
+        /// <param name="FileName">数据集名称， 如“表XY”，不带.Shp</param>
+        /// <param name="SpatialReference">数据集的空间参考</param>
+        public void CreatePointFeatureClassFromXYs(DataTable dt, string XFieldName, string YFieldName, string NameFieldName, string DirPath, string FileName, ISpatialReference SpatialReference)
+        {
+            
+             IFeatureWorkspace pFWS;
+            IWorkspaceFactory pWSF = new ShapefileWorkspaceFactory();
+            pFWS = pWSF.OpenFromFile(DirPath, 0) as IFeatureWorkspace;
+
+            IFeatureClass pFeatureClass;
+            try
+            {
+                if (System.IO.File.Exists(DirPath + "\\" + FileName + ".shp"))
+                {
+                    pFeatureClass = pFWS.OpenFeatureClass(FileName);
+                    IFeatureCursor featureCursor = pFeatureClass.Update(null, true);
+                    IFeature pFeature = featureCursor.NextFeature();
+                    while (pFeature != null)
+                    {
+                        featureCursor.DeleteFeature();
+                        pFeature = featureCursor.NextFeature();
+                    }
+                }
+                else
+                {
+                    //添加字段
+                    IFields pFields = new FieldsClass();
+                    IFieldsEdit pFieldsEdit = pFields as IFieldsEdit;
+
+                    //添加Shape字段
+                    IField pField = new FieldClass();
+                    IFieldEdit pFieldEdit = pField as IFieldEdit;
+                    pFieldEdit.Name_2 = "Shape";
+                    pFieldEdit.Type_2 = esriFieldType.esriFieldTypeGeometry;
+
+                    IGeometryDef pGeomDef = new GeometryDefClass();
+                    IGeometryDefEdit pGeomDefEdit = pGeomDef as IGeometryDefEdit;
+                    pGeomDefEdit.GeometryType_2 = esriGeometryType.esriGeometryPoint;//点类型
+                    pGeomDefEdit.SpatialReference_2 = SpatialReference;//设置空间参考
+
+                    pFieldEdit.GeometryDef_2 = pGeomDef;
+                    pFieldsEdit.AddField(pField);
+
+                    //添加另一个字段
+                    pField = new FieldClass();
+                    pFieldEdit = pField as IFieldEdit;
+                    //pFieldEdit.Length_2 = 50;
+                    pFieldEdit.Name_2 = NameFieldName;
+                    pFieldEdit.Type_2 = esriFieldType.esriFieldTypeDouble;
+                    pFieldsEdit.AddField(pField);
+
+                    pFeatureClass = pFWS.CreateFeatureClass(FileName, pFields, null, null, esriFeatureType.esriFTSimple, "Shape", "");
+                }
+                //添加记录
+                IFeatureCursor featureInsertCursor = pFeatureClass.Insert(true);
+                foreach (DataRow row in dt.Rows)
+                {
+                    IFeatureBuffer featureBuffer = pFeatureClass.CreateFeatureBuffer();
+                    //IFeature pNewFeature = pFeatureClass.CreateFeature();
+                    IPoint pPoint = new PointClass();
+                    pPoint.X = Convert.ToDouble(row[XFieldName].ToString());
+                    pPoint.Y = Convert.ToDouble(row[YFieldName].ToString());
+                    IGeometry pGeo = pPoint as IGeometry;
+                    featureBuffer.Shape = pGeo;
+                    featureBuffer.set_Value(pFeatureClass.FindField(NameFieldName), row[NameFieldName]);
+                    featureInsertCursor.InsertFeature(featureBuffer);
+                }
+                featureInsertCursor.Flush();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(featureInsertCursor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }

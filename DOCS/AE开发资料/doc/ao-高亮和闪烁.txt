@@ -1,0 +1,63 @@
+高亮和闪烁
+高亮和闪烁
+作者：http://b… 文章来源：http://bbs.esrichina-bj.cn 点击数：55 更新时间：2008-12-24 9:02:42
+下面是我选择和高亮的代码：
+#region  //获取可见图层的Identify结果集
+        private IArray GetIdentifyResult(IMap pMap, IGeometry pGeometry, IScreenDisplay pScreenDisplay)
+        {
+             IArray pIDArray =null;
+            IArray pIDArray1 = new　ArrayClass();
+            IIdentify2 pIdentify;
+            ILayer mLayer;
+              int mLayerCount = pMap.LayerCount;
+               for (int i = 0; i < mLayerCount; i++)
+            {
+                IArray pTempArray = null;
+
+                mLayer = pMap.get_Layer(i);
+                if (mLayer.Visible == true)
+                {
+                    pIdentify = (IIdentify2)mLayer;
+
+                    //将该图层的Identify集元素放入pIDArray中
+          pTempArray = pIdentify.Identify(pGeometry, pScreenDisplay.CancelTracker);
+
+                    if (pTempArray != null)
+                    {
+                        if (pIDArray != null)
+                        {
+                            int mCount = pTempArray.Count;
+                            for (int j = 0; j < mCount; j++)
+                            {
+                                pIDArray.Add(pTempArray.get_Element(j));
+                              
+                            }
+                        }
+                        else
+                        {　
+                            pIDArray = pTempArray;
+                           
+                        }
+                    }
+                }
+            }
+            return pIDArray;
+       }
+
+对获取的 pIDArray高亮显示;
+//下面是我一个一个高亮的代码
+
+        #region    //闪烁查找结果
+        private void FlashResult(IArray pIDArray, IScreenDisplay pScreenDisplay)
+        {
+            int mCount = pIDArray.Count;
+            IFeatureIdentifyObj pFeatIdObj;
+            IIdentifyObj pIdObj;
+
+            for (int i = 0; i < mCount; i++)
+            {
+                pFeatIdObj = (IFeatureIdentifyObj)pIDArray.get_Element(i);
+                pIdObj = (IIdentifyObj)pFeatIdObj;
+                pIdObj.Flash(pScreenDisplay);
+            }
+        }

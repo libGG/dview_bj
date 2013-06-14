@@ -1,0 +1,125 @@
+ 向Annotation图层添加feature
+从文本文件中读取数据添加到Annotation图层
+
+Public Sub AppendAnnoFeatures(pFeatureClass As IFeatureClass, _
+strTextFile As String)
+
+Dim pAnnoClass As IAnnoClass
+Set pAnnoClass = pFeatureClass.Extension
+If pAnnoClass Is Nothing Then
+  MsgBox "Annotation Class not found"
+  Exit Sub
+End If
+
+'****************
+' 打开文本文件并读取文件
+'****************
+Dim lFreeFile As Long ' File number
+lFreeFile = FreeFile
+Open strTextFile For Input As #lFreeFile
+
+Dim sText As String ' Annotation text
+Dim dX As Double ' Annotation handle X coordinate
+Dim dY As Double ' Annotation handle Y coordinate
+Dim dAngle As Double ' Annotation angle in degrees (anticlockwise from due east)
+Dim pTextElement As ITextElement
+
+'****************
+' 开始数据库处理事务，并设置为自动提交
+'****************
+Dim pDataset As IDataset
+Dim pTransactions As ITransactions
+Set pDataset = pFeatureClass
+' Inline QI to ITransactions
+Set pTransactions = pDataset.Workspace
+pTransactions.StartTransaction
+Const lAutoCommitInterval = 100
+
+'****************
+' 设置FDOGraphicsLayer - 这是插入annotation的最有效的方法
+'****************
+Dim pFDOGLFactory As IFDOGraphicsLayerFactory
+Set pFDOGLFactory = New FDOGraphicsLayerFactory
+
+Dim pFDOGLayer As IFDOGraphicsLayer
+Set pFDOGLayer = pFDOGLFactory.OpenGraphicsLayer(pDataset.Workspace, pFeatureClass.FeatureDataset, pDataset.Name)
+
+Dim pElementColl As IElementCollection
+Set pElementColl = New ElementCollection
+pFDOGLayer.BeginAddElements
+
+'****************
+' 处理没一行文件数据，直到文件结束
+'****************
+Dim lRowCount As Long
+lRowCount = 0
+Do While Not EOF(lFreeFile)
+  Input #lFreeFile, sText, dX, dY, dAngle ' Read line of data
+
+  '****************
+  ' 创建text element并把它加入到element collection
+  '****************
+  Set pTextElement = MakeTextElement(sText, dX, dY, dAngle)
+  pElementColl.Add pTextElement
+  lRowCount = lRowCount + 1
+
+  '****************
+  '提交
+  '****************
+  If lRowCount Mod lAutoCommitInterval = 0 Then
+   pFDOGLayer.DoAddElements pElementColl, 0
+   pElementColl.Clear
+   pTransactions.CommitTransaction
+   pTransactions.StartTransaction
+  End If
+
+Loop
+Close lFreeFile ' 关闭文件.
+
+' Commit any left over elements
+If pElementColl.Count > 0 Then
+  pFDOGLayer.DoAddElements pElementColl, 0
+  pElementColl.Clear
+End If
+
+pFDOGLayer.EndAddElements
+pTransactions.CommitTransaction
+
+End Sub
+
+'以下代码是用来创建Text Element
+Public Function MakeTextElement(sText As String, _
+dX As Double, _
+dY As Double, _
+dAngle As Double) As ITextElement
+
+' Create new text element
+Dim pTextElement As ITextElement
+Set pTextElement = New TextElement
+pTextElement.ScaleText = True
+pTextElement.Text = sText
+
+' Set the symbol ID of the element to point to the existing
+' text symbol in the annotation feature class's symbol collection
+Dim pGroupSymbolElement As IGroupSymbolElement
+Set pGroupSymbolElement = pTextElement
+pGroupSymbolElement.SymbolID = 0
+
+' Set the geometry of the text element
+Dim pElement As IElement
+Set pElement = pTextElement
+
+Dim pPoint As IPoint
+Set pPoint = New Point
+pPoint.PutCoords dX, dY
+pElement.Geometry = pPoint
+
+' If Angle is not zero then QI to ITransform2D to rotate the element
+If dAngle <> 0# Then
+  Const PI = 3.141592657
+  Dim pTransform2D As ITransform2D
+  Set pTransform2D = pTextElement
+  pTransform2D.Rotate pPoint, (dAngle * (PI / 180))
+End If
+Set MakeTextElement = pTextElement
+End Function 
