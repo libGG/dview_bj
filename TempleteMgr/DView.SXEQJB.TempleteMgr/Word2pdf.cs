@@ -22,13 +22,13 @@ namespace DView.SXEQJB.TempleteMgr
         /// <summary>
         /// 通过第三方破解DLL转换（Aspose.Words.dll）
         /// </summary>
-        /// <param name="wordInputPath"></param>
-        /// <param name="imageOutputPath"></param>
-        /// <param name="imageName"></param>
-        /// <param name="startPageNum"></param>
-        /// <param name="endPageNum"></param>
-        public void ConvertWordToPdf(string wordInputPath, string imageOutputPath,
-    string imageName, int startPageNum, int endPageNum)
+        /// <param name="wordInputPath">word文件名全路径</param>
+        /// <param name="pdfOutputPath"></param>
+        /// <param name="pdfName">输出pdf文件名</param>
+        /// <param name="startPageNum">起始页</param>
+        /// <param name="endPageNum">中止页</param>
+        public void ConvertWordToPdf(string wordInputPath, string pdfOutputPath,
+    string pdfName, int startPageNum, int endPageNum)
         {
             try
             {
