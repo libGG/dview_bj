@@ -45,7 +45,6 @@ namespace DView.SXEQJB.TempleteMgr
         }
         #endregion
 
-
         #region UI控件事件处理
         private void FrmPreViewTemp_Load(object sender, EventArgs e)
         {
@@ -103,6 +102,5 @@ namespace DView.SXEQJB.TempleteMgr
                 XtraMessageBox.Show(info, "提醒", MessageBoxButtons.OK);      
             }
         }
-        
     }
 }

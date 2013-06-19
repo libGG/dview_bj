@@ -111,6 +111,12 @@
     <Compile Include="Dal\SXEQ_JBLB.cs" />
     <Compile Include="Dal\SXEQ_JBMB.cs" />
     <Compile Include="Dal\DbHelperOra.cs" />
+    <Compile Include="Frm\FrmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmCategory.Designer.cs">
+      <DependentUpon>FrmCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm\FrmQueryCloseWord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,10 @@
     <EmbeddedResource Include="Controls\TempMgrCtl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>TempMgrCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmCategory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\FrmQueryCloseWord.resx">
       <SubType>Designer</SubType>
@@ -408,10 +418,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="_dll\Aspose.Words.dll" />
+    <Content Include="_dll\dsoframer.ocx" />
+    <Content Include="_dll\readme.txt" />
     <Content Include="_reference\SaveAsPDFandXPS.exe" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tool\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

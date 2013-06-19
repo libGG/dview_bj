@@ -101,7 +101,6 @@ namespace DView.SXEQJB.TempleteMgr.Dal
         /// </summary>
         public bool Delete(string fguid)
         {
-
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from SXEQ_JBMB ");
             strSql.Append(" where fguid=:fguid ");
@@ -119,14 +118,18 @@ namespace DView.SXEQJB.TempleteMgr.Dal
                 return false;
             }
         }
+
         /// <summary>
-        /// 批量删除数据
+        /// 删除一批数据
         /// </summary>
-        public bool DeleteList(string fguidlist)
+        public bool DeleteList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from SXEQ_JBMB ");
-            strSql.Append(" where fguid in (" + fguidlist + ")  ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
             int rows = DbHelperOra.ExecuteSql(strSql.ToString());
             if (rows > 0)
             {
@@ -137,6 +140,8 @@ namespace DView.SXEQJB.TempleteMgr.Dal
                 return false;
             }
         }
+
+
 
         /// <summary>
         /// 得到一个对象实体

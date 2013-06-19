@@ -14,7 +14,7 @@ namespace DView.SXEQJB.TempleteMgr
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTempMgr());
+            Application.Run(new FrmCategory());
         }
     }
 }

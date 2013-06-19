@@ -93,6 +93,28 @@ namespace DView.SXEQJB.TempleteMgr.Dal
         }
 
         /// <summary>
+        /// 删除一批数据
+        /// </summary>
+        public bool DeleteList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from SXEQ_JBLB ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            int rows = DbHelperOra.ExecuteSql(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// 得到一个对象实体
         /// </summary>
         public SXEQ_JBLB GetModel(string fguid)
