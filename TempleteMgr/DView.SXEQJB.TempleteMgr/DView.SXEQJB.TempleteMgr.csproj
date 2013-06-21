@@ -420,6 +420,7 @@
     <Content Include="_dll\Aspose.Words.dll" />
     <Content Include="_dll\dsoframer.ocx" />
     <Content Include="_dll\readme.txt" />
+    <Content Include="_reference\readme.txt" />
     <Content Include="_reference\SaveAsPDFandXPS.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

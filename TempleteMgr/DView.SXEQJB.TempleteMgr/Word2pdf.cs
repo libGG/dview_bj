@@ -151,7 +151,6 @@ namespace DView.SXEQJB.TempleteMgr
                     GC.Collect();
                     GC.WaitForPendingFinalizers();
                 }
-
             }
             catch (Exception ex)
             {

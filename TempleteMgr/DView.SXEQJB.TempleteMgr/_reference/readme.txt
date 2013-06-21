@@ -1,0 +1,2 @@
+office的一个扩展包，用于格式转换，比如word转pdf等。
+通过office自带接口(需先安装SaveAsPDFandXPS.exe)，此接口仅适用于office2007及以上版本

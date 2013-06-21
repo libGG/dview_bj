@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="CutImage"
+	ProjectGUID="{D740C877-F1CB-4266-BBAA-67D52693407C}"
+	RootNamespace="CutImage"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories=".\include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="4"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="lib/gdal_i.lib"
+				LinkIncremental="2"
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="1"
+			CharacterSet="1"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="源文件"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\CutImage.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="头文件"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath=".\ConsoleProcess.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ProgressBase.h"
+				>
+			</File>
+			<File
+				RelativePath=".\stdafx.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="资源文件"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
+			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
+			>
+			<File
+				RelativePath=".\testdata\wasia(tif).tif"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="include"
+			>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_atomic_ops.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_base64.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_config.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_config_extras.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_conv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_csv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_error.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_hash_set.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_http.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_list.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_minixml.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_minizip_ioapi.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_minizip_unzip.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_minizip_zip.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_multiproc.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_odbc.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_port.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_quad_tree.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_string.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_time.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_vsi.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_vsi_virtual.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_win32ce_api.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cpl_wince.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\cplkeywordparser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_alg.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_alg_priv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_csv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_frmts.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_pam.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_priv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_proxy.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_rat.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_version.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdal_vrt.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdalgrid.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdaljp2metadata.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdalwarper.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gdalwarpkernel_opencl.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\gvgcpfit.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\memdataset.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_api.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_attrind.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_core.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_expat.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_feature.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_featurestyle.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_geometry.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_geos.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_p.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_spatialref.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_srs_api.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogr_srs_esri_names.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogrgeomediageometry.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogrpgeogeometry.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\ogrsf_frmts.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\rawdataset.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\swq.h"
+				>
+			</File>
+			<File
+				RelativePath=".\targetver.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\thinplatespline.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\include\vrtdataset.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="data"
+			>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\compdcs.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\coordinate_axis.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\cubewerx_extra.wkt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\datum_shift.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\ecw_cs.wkt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\ellipsoid.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\epsg.wkt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\esri_extra.wkt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\esri_StatePlane_extra.wkt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\esri_Wisconsin_extra.wkt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\gcs.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\gcs.override.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\gdal_datum.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\gdalicon.png"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\GDALLogoBW.svg"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\GDALLogoColor.svg"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\GDALLogoGS.svg"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\geoccs.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\gt_datum.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\gt_ellips.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\header.dxf"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\LICENSE.TXT"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\nitf_spec.xml"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\nitf_spec.xsd"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\pci_datum.txt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\pci_ellips.txt"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\pcs.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\pcs.override.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\prime_meridian.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\projop_wparm.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57agencies.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57attributes.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57attributes_aml.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57attributes_iw.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57expectedinput.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57objectclasses.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57objectclasses_aml.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\s57objectclasses_iw.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\seed_2d.dgn"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\seed_3d.dgn"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\stateplane.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\trailer.dxf"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\unit_of_measure.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\vertcs.csv"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\download\software\QQ群\gdal19全套版本C++ C# Python\gdal\data\vertcs.override.csv"
+				>
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\testdata\cutline.dbf"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\cutline.prj"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\cutline.sbn"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\cutline.sbx"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\cutline.shp"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\cutline.shx"
+			>
+		</File>
+		<File
+			RelativePath=".\ReadMe.txt"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\wasia(tif).aux"
+			>
+		</File>
+		<File
+			RelativePath=".\testdata\wasia(tif).rrd"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
