@@ -46,7 +46,7 @@ LoadCutline( const char *pszCutlineDSName, const char *pszCLayer,
 /* -------------------------------------------------------------------- */
     OGRDataSourceH hSrcDS;
 
-    hSrcDS = OGROpen( pszCutlineDSName, FALSE, NULL );
+    hSrcDS = OGROpen( pszCutlineDSName, FALSE, NULL );//
     if( hSrcDS == NULL )
         return 1;
 
@@ -500,28 +500,18 @@ int CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char*
 
 
 
-
-
-
-
-
-
-
-
-
-
 int main()
 {
     //注册文件格式
     GDALAllRegister();
-   
-    const char* pszAOIFile = "C:\\cutline\\cutline.shp";
-	const char* pszInFile="C:\\cutline\\wasia(tif).tif";
-	const char* pszOutFile="c:\\cutline\\cuted.tif";
+    
+    const char* pszAOIFile = "C:\\testdata\\cutline.shp";
+	const char* pszInFile="C:\\testdata\\wasia(tif).tif";
+	const char* pszOutFile="c:\\testdata\\cuted.tif";
 	//const char* 
 
 //CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char* pszAOIFile, const char* pszSQL, 
 //    int *pBandInex, int *piBandCount, int iBuffer, const char* pszFormat
-CutImageByAOIGDAL(pszInFile,pszOutFile, pszAOIFile,"area>0.01",NULL,NULL,0,"tif");
+CutImageByAOIGDAL(pszInFile,pszOutFile, pszAOIFile,"area > 0.001",NULL,NULL,0,"tif");
 	getchar();
 }
