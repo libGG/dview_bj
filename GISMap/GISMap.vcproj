@@ -4,6 +4,7 @@
 	Version="8.00"
 	Name="GISMap"
 	ProjectGUID="{128E7C88-E0B6-46F8-87C1-8DCDB8459EF8}"
+	RootNamespace="GISMap"
 	Keyword="MFCProj"
 	>
 	<Platforms>
@@ -987,5 +988,9 @@
 		</File>
 	</Files>
 	<Globals>
+		<Global
+			Name="RESOURCE_FILE"
+			Value="GISMap.rc"
+		/>
 	</Globals>
 </VisualStudioProject>
