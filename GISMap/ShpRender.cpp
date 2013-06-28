@@ -53,8 +53,6 @@ ShpRender::~ShpRender()
 	//## end ShpRender::~ShpRender%40AD72380148_dest.body
 }
 
-
-
 //## Other Operations (implementation)
 void ShpRender::Render (CDC *pDC, MapProperty* pMapProperty)
 {
@@ -76,12 +74,12 @@ void ShpRender::Render (CDC *pDC, MapProperty* pMapProperty)
 
 	clipL = clipR = xs[0];
 	clipB = clipT = ys[0];
-	for ( i = 1; i < 4; i ++ )
+	for ( i = 1; i < 4; i ++ )// 计算在视图矩形中显示的地图范围
 	{
-		if ( clipL > xs[i] ) clipL = xs[i];
-		if ( clipR < xs[i] ) clipR = xs[i];
-		if ( clipB > ys[i] ) clipB = ys[i];
-		if ( clipT < ys[i] ) clipT = ys[i];
+		if ( clipL > xs[i] ) clipL = xs[i];// 左上角X坐标
+		if ( clipR < xs[i] ) clipR = xs[i];// 左上角Y坐标
+		if ( clipB > ys[i] ) clipB = ys[i];// 右下角角X坐标
+		if ( clipT < ys[i] ) clipT = ys[i];// 右下角Y坐标
 	}
 
 	Feature			*pfeature;

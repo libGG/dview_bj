@@ -56,22 +56,23 @@ class MapControl
       ~MapControl();
 
       //## Operation: GetDataBound%40AC5E3400FA
-      void GetDataBound (double& x, double& y, double& w, double& h);
+      void GetDataBound (double& x, double& y, double& w, double& h);// 获取地图数据的（数据坐标范围--所有数据放一起的外接矩形）
 
-      //## Operation: GetWorldBound%40A1C5E30042
+      //## Operation: GetWorldBound%40A1C5E30042	  
+	  // 获取当前视图所显示的地图的范围（地图范围：所有图层组合在一起的外接矩形），单位是实际地理数据单位
       void GetWorldBound (double& x, double& y, double& w, double& h);
 
       //## Operation: GetLayers%40A1C5E30046
       Layers& GetLayers ();
 
       //## Operation: ClientToWorld%40A1C5E30047
-      void ClientToWorld (double& x, double& y);
+      void ClientToWorld (double& x, double& y);// 屏幕坐标转地理坐标
 
       //## Operation: WorldToClient%40A1C5E30049
-      void WorldToClient (double& x, double& y);
+      void WorldToClient (double& x, double& y);// 地理坐标转屏幕坐标
 
       //## Operation: SetWorldBound%40A1C5E3004D
-      void SetWorldBound (double x, double y, double w, double h);
+      void SetWorldBound (double x, double y, double w, double h);// 设置当前视图要显示的地图范围
 
       //## Operation: Reset%40A1C5E30053
       void Reset ();
@@ -98,18 +99,19 @@ class MapControl
 	  void ClearBuffer( CDC *pDC, int x, int y, int w, int h );
 
       //## begin MapControl%40A1C5E3003E.public preserve=yes
-	  void SetViewBound ( int x, int y, int w, int h );
+	  void SetViewBound ( int x, int y, int w, int h );// 设置当前视图的范围，用于在视图范围改变的时候，将它的范围传给函数内部，
+	  //然后做相应的处理操作。比如当改变窗口的范围的时候，就会调用该函数，然后根据范围做调整，最后再刷新地图。
 
-	  void GetViewBound ( int& x, int& y, int& w, int& h );
+	  void GetViewBound ( int& x, int& y, int& w, int& h );// 获取当前视图窗口的范围（像素坐标）
 
 	  //## Operation: SetOwnerView%3DAA2F4702A8
-      void SetOwnerView (CView* pView);
+      void SetOwnerView (CView* pView);// 设置装载和显示控件的躯体、容器、舞台（此程序中的MapControl类相当于对地图控件操作的封装）
 
       //## Operation: GetOwnerView%3DB8B3CF03D5
       CView* GetOwnerView ();
       //## end MapControl%40A1C5E3003E.public
 
-	  CPoint* GetOwnerWindowDrawingPos();
+	  CPoint* GetOwnerWindowDrawingPos();// 获取视图上鼠标的位置，像素坐标
 
 	  CMouseListeners& GetMouseListeners();
 
@@ -121,7 +123,7 @@ class MapControl
   private:
     // Additional Private Declarations
       //## begin MapControl%40A1C5E3003E.private preserve=yes
-	  CPoint *m_pOwnerWindowDrawingPos;
+	  CPoint *m_pOwnerWindowDrawingPos;// 记录鼠标在视图窗口上的位置，像素坐标
       //## end MapControl%40A1C5E3003E.private
 
 	  CMouseListeners *m_pMouseListeners;
@@ -130,51 +132,52 @@ class MapControl
 
       //## Attribute: dataX%40AC5AFD0242
       //## begin MapControl::dataX%40AC5AFD0242.attr preserve=no  private: double {U} 
-      double dataX;
+      double dataX;// 数据坐标范围的左下角X坐标（数据坐标范围--所有数据放一起的外接矩形），单位是实际地理数据单位
       //## end MapControl::dataX%40AC5AFD0242.attr
 
       //## Attribute: dataY%40AC5E1C01F4
       //## begin MapControl::dataY%40AC5E1C01F4.attr preserve=no  private: double {U} 
-      double dataY;
+      double dataY;// 数据坐标范围的左下角Y坐标
       //## end MapControl::dataY%40AC5E1C01F4.attr
 
       //## Attribute: dataWidth%40AC5E2101D4
       //## begin MapControl::dataWidth%40AC5E2101D4.attr preserve=no  private: double {U} 
-      double dataWidth;
+      double dataWidth;// 数据坐标范围宽度
       //## end MapControl::dataWidth%40AC5E2101D4.attr
 
       //## Attribute: dataHeight%40AC5E270280
       //## begin MapControl::dataHeight%40AC5E270280.attr preserve=no  private: double {U} 
-      double dataHeight;
+      double dataHeight;// 数据坐标范围高度
       //## end MapControl::dataHeight%40AC5E270280.attr
 
       //## Attribute: clientWidth%40A1C5E30069
       //## begin MapControl::clientWidth%40A1C5E30069.attr preserve=no  private: int {U} 
-      int clientWidth;
+      int clientWidth;// 客户区视图窗口范围的宽度，单位像素
       //## end MapControl::clientWidth%40A1C5E30069.attr
 
       //## Attribute: clientHeight%40A1CE07034B
       //## begin MapControl::clientHeight%40A1CE07034B.attr preserve=no  private: int {U} 
-      int clientHeight;
+      int clientHeight;// 客户区视图窗口范围的高度，单位像素
       //## end MapControl::clientHeight%40A1CE07034B.attr
 
       //## Attribute: worldX%40A1C5E3006A
       //## begin MapControl::worldX%40A1C5E3006A.attr preserve=no  private: double {U} 
-      double worldX;
+      double worldX;// 当前客户区显示的地图范围的左下角X坐标（地图范围：所有图层组合在一起的外接矩形），单位是实际地理数据单位
       //## end MapControl::worldX%40A1C5E3006A.attr
 
       //## Attribute: worldY%40A1CE2A01A5
       //## begin MapControl::worldY%40A1CE2A01A5.attr preserve=no  private: double {U} 
-      double worldY;
+      double worldY;// 当前客户区显示的地图范围的左下角Y坐标（地图范围：所有图层组合在一起的外接矩形），单位是实际地理数据单位
       //## end MapControl::worldY%40A1CE2A01A5.attr
 
       //## Attribute: worldWidth%40A1CE3000BB
       //## begin MapControl::worldWidth%40A1CE3000BB.attr preserve=no  private: double {U} 
-      double worldWidth;
+      double worldWidth;// 当前客户区显示的地图范围的宽度（地图范围：所有图层组合在一起的外接矩形），单位是实际地理数据单位
       //## end MapControl::worldWidth%40A1CE3000BB.attr
 
       //## Attribute: worldHeight%40A1CE3B00BB
       //## begin MapControl::worldHeight%40A1CE3B00BB.attr preserve=no  private: double {U} 
+	  // 当前客户区显示的地图范围的高度（地图范围：所有图层组合在一起的外接矩形），单位是实际地理数据单位
       double worldHeight;
       //## end MapControl::worldHeight%40A1CE3B00BB.attr
 
