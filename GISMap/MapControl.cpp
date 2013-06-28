@@ -327,10 +327,10 @@ void MapControl::ReDraw (int x, int y, int w, int h)
 	ClearBuffer(&mapBufferDC,x,y,w,h);
 
 	CRect clip_rect ;
-	CRgn preRgn, newRgn;
+	CRgn /*preRgn,*/ newRgn;
 	newRgn.CreateRectRgn( x,y,x+w,y+h);
 	TRACE("地图绘制区域：%d, %d, %d, %d\n",x,y,x+w,y+h);
-	mapBufferDC.GetClipBox(&clip_rect) ;// 获得要刷新的区域，即无效区，默认是刷新整个客户区，那样效率低
+	mapBufferDC.GetClipBox(&clip_rect) ;// 获得要刷新的区域，即无效区
 	TRACE("窗口无效区域：%d, %d, %d, %d\n",clip_rect.left,clip_rect.top,clip_rect.right,clip_rect.bottom);
 	mapBufferDC.SelectClipRgn( &newRgn );// 设置即将刷新的区域
 	newRgn.DeleteObject();// 在DC中把区域设置后，把区域对象(gdi对象)删除，释放资源
@@ -341,8 +341,8 @@ void MapControl::ReDraw (int x, int y, int w, int h)
 		LayerProperty &layerProperty = pLayer->GetProperty();
 		pLayer->GetRender().Render(&mapBufferDC,&mapProperty);
 	}
-	preRgn.CreateRectRgnIndirect(&clip_rect);
-	preRgn.DeleteObject();
+	//preRgn.CreateRectRgnIndirect(&clip_rect);
+	//preRgn.DeleteObject();
 
 	CDC paintBufferDC ;
 	paintBufferDC.CreateCompatibleDC( pDC );
