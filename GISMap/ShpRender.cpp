@@ -61,7 +61,7 @@ void ShpRender::Render (CDC *pDC, MapProperty* pMapProperty)
 	double x0, y0, x1, y1;
 	double clipL, clipT, clipR, clipB ; // 地理坐标
 	double intersectL, intersectT, intersectR, intersectB ; // 相交的矩形
-	double xs[4], ys[4];
+	double xs[4], ys[4];// 视图矩形4个顶点坐标
 	//CPoint pointarray[ 500 ];
 	pMapProperty->GetClipRect(x,y,w,h);	
 	xs[0] = x ; ys[0] = y ;
@@ -72,21 +72,22 @@ void ShpRender::Render (CDC *pDC, MapProperty* pMapProperty)
 	for ( i = 0; i < 4; i ++ )
 		pMapProperty->ClientToWorld(xs[i],ys[i]);
 
-	clipL = clipR = xs[0];
+	clipL = clipR = xs[0];// 初始化的时候赋值第一个
 	clipB = clipT = ys[0];
 	for ( i = 1; i < 4; i ++ )// 计算在视图矩形中显示的地图范围
 	{
-		if ( clipL > xs[i] ) clipL = xs[i];// 左上角X坐标
-		if ( clipR < xs[i] ) clipR = xs[i];// 左上角Y坐标
-		if ( clipB > ys[i] ) clipB = ys[i];// 右下角角X坐标
-		if ( clipT < ys[i] ) clipT = ys[i];// 右下角Y坐标
+		if ( clipL > xs[i] ) clipL = xs[i];// 左上角 X 坐标
+		if ( clipT < ys[i] ) clipT = ys[i];// 左上角 Y 坐标
+		if ( clipR < xs[i] ) clipR = xs[i];// 右下角 X 坐标
+		if ( clipB > ys[i] ) clipB = ys[i];// 右下角 Y 坐标
 	}
 
 	Feature			*pfeature;
 	int	pointscount, pointcount, index ;
 	LayerProperty &layerproperty = m_pLayer ->GetProperty();
 	FeatureClass &featureClass = (FeatureClass&)layerproperty.GetRelateDataSet();
-#pragma region 绘制点
+
+	#pragma region 绘制点
 	if ( featureClass.GetType() == POINTDATASET )
 	{
 		for( pfeature = featureClass.GetFirstFeature(); pfeature != NULL; pfeature = featureClass.GetNextFeature() )
@@ -109,7 +110,7 @@ void ShpRender::Render (CDC *pDC, MapProperty* pMapProperty)
 			pDC->Ellipse(x0-5,y0-5,x0+5,y0+5);
 		}
 	}
-#pragma endregion
+	#pragma endregion
 	else if ( featureClass.GetType() == LINEDATASET )
 	{
 		CPen newPen, *pPrePen;

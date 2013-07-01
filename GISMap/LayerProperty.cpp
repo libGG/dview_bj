@@ -29,13 +29,6 @@
 
 
 
-
-
-
-
-
-
-
 LayerProperty::LayerProperty (int layerID, const char* name )
   //## begin LayerProperty::LayerProperty%40A237BE01E5.hasinit preserve=no
       : m_nLayerID(-1),

@@ -81,7 +81,7 @@ class MapControl
       void ReDraw (int x, int y, int w, int h);
 
       //## Operation: DrawMap%40AC7D5C03A9
-      void DrawMap ();
+      void DrawMap ();// 将已绘制为一张bitmap的地图(其实是整个客户区要显示的图像)输出到视图DC
 
       //## Operation: Refresh%40A1C5E3005B
       void Refresh ();
@@ -93,7 +93,7 @@ class MapControl
       void ZoomOut (int x, int y, int w, int h);
 
       //## Operation: Scroll%40A1C5E30060
-      void Scroll (int dx, int dy);
+      void Scroll (int dx, int dy);// 视图
 
     // Additional Public Declarations
 	  void ClearBuffer( CDC *pDC, int x, int y, int w, int h );
@@ -183,12 +183,12 @@ class MapControl
 
       //## Attribute: mapBufferID%40AC59C1003E
       //## begin MapControl::mapBufferID%40AC59C1003E.attr preserve=no  private: Fl_Offscreen {U} 
-      CBitmap *m_pMapBuffer;
+      CBitmap *m_pMapBuffer;// 仅仅代表客户区DC要显示的图像中的地图图像部分的缓冲区
       //## end MapControl::mapBufferID%40AC59C1003E.attr
 
       //## Attribute: paintBufferID%40AC5A8D000F
       //## begin MapControl::paintBufferID%40AC5A8D000F.attr preserve=no  private: Fl_Offscreen {U} 
-      CBitmap *m_pPaintBuffer;
+      CBitmap *m_pPaintBuffer;// 代表的是整个客户区DC要显示全部图像缓冲区
       //## end MapControl::paintBufferID%40AC5A8D000F.attr
 
       //## Attribute: layers%40A1C5E3006C

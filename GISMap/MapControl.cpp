@@ -327,7 +327,7 @@ void MapControl::ReDraw (int x, int y, int w, int h)
 	ClearBuffer(&mapBufferDC,x,y,w,h);
 
 	CRect clip_rect ;
-	CRgn /*preRgn,*/ newRgn;
+	CRgn preRgn, newRgn;
 	newRgn.CreateRectRgn( x,y,x+w,y+h);
 	TRACE("地图绘制区域：%d, %d, %d, %d\n",x,y,x+w,y+h);
 	mapBufferDC.GetClipBox(&clip_rect) ;// 获得要刷新的区域，即无效区
@@ -339,19 +339,27 @@ void MapControl::ReDraw (int x, int y, int w, int h)
 	{
 		ILayer *pLayer = layers->GetLayer(i);
 		LayerProperty &layerProperty = pLayer->GetProperty();
-		pLayer->GetRender().Render(&mapBufferDC,&mapProperty);
+		pLayer->GetRender().Render(&mapBufferDC,&mapProperty);// 往地图bufferDC中绘图
 	}
-	//preRgn.CreateRectRgnIndirect(&clip_rect);
-	//preRgn.DeleteObject();
+	preRgn.CreateRectRgnIndirect(&clip_rect);
+	preRgn.DeleteObject();
 
 	CDC paintBufferDC ;
 	paintBufferDC.CreateCompatibleDC( pDC );
 	CBitmap *pPrePaintBitmap = (CBitmap*)paintBufferDC.SelectObject(m_pPaintBuffer);
 	//Map ----> Paint
-	paintBufferDC.BitBlt(x,y,w,h,&mapBufferDC,x,y,SRCCOPY);
+	paintBufferDC.BitBlt(x,y,w,h,&mapBufferDC,x,y,SRCCOPY);// 将地图bufferDC中的图像拷贝到paintBuuferDC
 	//Map ----> Paint 
 	paintBufferDC.SelectObject( pPrePaintBitmap );
-	paintBufferDC.DeleteDC();
+	BOOL isok= paintBufferDC.DeleteDC();
+	if(isok)
+	{
+		//TRACE0("DeleteDC OK");
+	}
+	else
+	{
+		//TRACE0("DeleteDC failed");
+	}
 	pPrePaintBitmap = 0 ;
 
 	mapBufferDC.SelectObject(pPreMapBitmap);
@@ -490,7 +498,7 @@ void MapControl::Scroll (int dx, int dy)
 	if ( this->m_pPaintBuffer == 0 )   return;
 
 	double x0 = 0, y0 = 0, x1 = dx, y1 = dy;
-	ClientToWorld(x0, y0);    
+	ClientToWorld(x0, y0);
 	ClientToWorld(x1, y1);
 
 	double offset_x = x1 - x0;
