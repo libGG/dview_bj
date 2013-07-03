@@ -89,7 +89,7 @@ BOOL CGISMapApp::InitInstance()
 		return FALSE;
 
 	// The one and only window has been initialized, so show and update it.
-	m_pMainWnd->ShowWindow(SW_SHOWMAXIMIZED);
+	m_pMainWnd->ShowWindow(SW_SHOWNORMAL);// SW_SHOWMAXIMIZED
 	m_pMainWnd->UpdateWindow();
 
 	return TRUE;

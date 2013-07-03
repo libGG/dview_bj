@@ -60,7 +60,7 @@ class MapProperty
       void GetClipRect (int& x, int& y, int& w, int& h);
 
       //## Operation: SetClipRect%40AD6128007D
-      void SetClipRect (int x, int y, int w, int h);
+      void SetClipRect (int x, int y, int w, int h);// 设置显示地图的客户区矩形大小(像素坐标)
 
     // Additional Public Declarations
       //## begin MapProperty%40AD5E5200ED.public preserve=yes

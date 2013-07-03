@@ -132,11 +132,11 @@ void CViewCtrlMouseListener::OnMouseDrag (CMouseEvent* pMouseEvent)
 		{
 			CView *pView = pMapControl ->GetOwnerView () ;
 
-			pMapControl ->Refresh ();
+			pMapControl ->Refresh ();// 清除之前的矩形框
 			
 			CDC *pDC = pView->GetDC();
 			CPen pen, *pOldPen ;
-			pen.CreatePen ( 0, 1, 255 ) ;
+			pen.CreatePen ( 0, 1, 255 ) ;//255
 			pOldPen = ( CPen*)pDC ->SelectObject ( &pen );
 			CBrush *pOldBrush = (CBrush*)pDC ->SelectStockObject ( NULL_BRUSH );
 			pDC ->Rectangle ( m_LButtonPoint.x, m_LButtonPoint.y, point.x, point.y ) ;

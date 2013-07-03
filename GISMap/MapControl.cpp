@@ -378,16 +378,24 @@ CPoint* MapControl::GetOwnerWindowDrawingPos()
 void MapControl::DrawMap ()
 {
 	//## begin MapControl::DrawMap%40AC7D5C03A9.body preserve=yes
-	if ( m_pPaintBuffer == 0 )  return ;
+	TRACE("m_pPaintBuffer== %X\n", m_pPaintBuffer);
+	if ( m_pPaintBuffer == 0 ) 
+	{
+		TRACE("m_pPaintBuffer == 0");
+		return ;
+	}
 	CDC *pDC = this->m_pOwnerView->GetDC();
 	CDC tempDC ;
 	tempDC.CreateCompatibleDC(pDC);
-	CBitmap *preBitmap = (CBitmap*)tempDC.SelectObject(m_pPaintBuffer);
-	pDC ->BitBlt(m_pOwnerWindowDrawingPos->x,m_pOwnerWindowDrawingPos->y,clientWidth,clientHeight,&tempDC,0,0,SRCCOPY);
+	CBitmap *preBitmap = (CBitmap*)tempDC.SelectObject(m_pPaintBuffer);	
+	TRACE("DrawMap() 0");
+	TRACE("m_pOwnerWindowDrawingPos X= %d, Y= %d\n",(int)m_pOwnerWindowDrawingPos->x,(int)m_pOwnerWindowDrawingPos->y);
+	pDC ->BitBlt(m_pOwnerWindowDrawingPos->x,m_pOwnerWindowDrawingPos->y,clientWidth,clientHeight,&tempDC,0,0,SRCCOPY);	
 	tempDC.SelectObject(preBitmap);
 	tempDC.DeleteDC();
 	this->m_pOwnerView->ReleaseDC(pDC);
 	//## end MapControl::DrawMap%40AC7D5C03A9.body
+	TRACE("DrawMap() 1");
 }
 
 void MapControl::Refresh ()

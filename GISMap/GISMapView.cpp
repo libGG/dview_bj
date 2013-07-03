@@ -72,7 +72,7 @@ BOOL CGISMapView::PreCreateWindow(CREATESTRUCT& cs)
 
 /////////////////////////////////////////////////////////////////////////////
 // CGISMapView drawing
-
+// 经调试发现，放大缩小不会进去到OnDraw()中来，奇怪
 void CGISMapView::OnDraw(CDC* pDC)
 {
 	CGISMapDoc* pDoc = GetDocument();
@@ -81,8 +81,11 @@ void CGISMapView::OnDraw(CDC* pDC)
 	CRect clientRect;
 	this->GetClientRect( &clientRect );
 	if ( m_pMapControl == 0 ) return ;
+	// 经调试发现，放大缩小不会调用SetViewBound()和DrawMap()
+	TRACE("开始SetViewBound()\n");
 	m_pMapControl->SetViewBound( clientRect.left,clientRect.top,clientRect.Width(), clientRect.Height() );
-	m_pMapControl->DrawMap();
+	TRACE("开始DrawMap()\n");
+	m_pMapControl->DrawMap();// 经调试发现，放大缩小不会调用DrawMap()
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -150,9 +153,8 @@ void CGISMapView::OnLButtonDown(UINT nFlags, CPoint point)
 	IMouseListener *pMouseListener = mouselisteners.GetCurrentMouseListener();
 	if ( pMouseListener != 0 )
 	{
-		CMouseEvent event( this->m_pMapControl, point, nFlags, 
-				mouselisteners.GetCurrentSubMouseListenerKey() );
-		pMouseListener->OnLButtonDown( & event );
+		CMouseEvent event2( this->m_pMapControl, point, nFlags, mouselisteners.GetCurrentSubMouseListenerKey() );
+		pMouseListener->OnLButtonDown( & event2 );
 	}
 	CView::OnLButtonDown(nFlags, point);
 }
