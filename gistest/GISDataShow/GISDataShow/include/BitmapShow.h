@@ -81,7 +81,7 @@ protected:
     BitmapShowKind kind;
 	LPBITMAPINFO m_lpBitmapInfo;
 	CPalette*Palette;
-	unsigned char* lpDIBBits;
+	unsigned char* lpDIBBits;// 位图数据，像素值
 	long ILineBytes;
 };
 class CGrayBitmapShow :public CBitmapShow

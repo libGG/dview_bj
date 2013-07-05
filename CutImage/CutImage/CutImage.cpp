@@ -20,7 +20,36 @@
 #include "ConsoleProcess.h"
 #include "ogr_geometry.h"
 #include "ogr_api.h"
+#include "ogrsf_frmts.h"
 
+
+class CutlineTransformer : public OGRCoordinateTransformation
+{
+public:
+
+    void         *hSrcImageTransformer;
+
+    virtual OGRSpatialReference *GetSourceCS() { return NULL; }
+    virtual OGRSpatialReference *GetTargetCS() { return NULL; }
+
+    virtual int Transform( int nCount, 
+                           double *x, double *y, double *z = NULL ) {
+        int nResult;
+
+        int *pabSuccess = (int *) CPLCalloc(sizeof(int),nCount);
+        nResult = TransformEx( nCount, x, y, z, pabSuccess );
+        CPLFree( pabSuccess );
+
+        return nResult;
+    }
+
+    virtual int TransformEx( int nCount, 
+                             double *x, double *y, double *z = NULL,
+                             int *pabSuccess = NULL ) {
+        return GDALGenImgProjTransform( hSrcImageTransformer, TRUE, 
+                                        nCount, x, y, z, pabSuccess );
+    }
+};
 
 /************************************************************************/
 /*                            LoadCutline()                             */
@@ -34,19 +63,20 @@ LoadCutline( const char *pszCutlineDSName, const char *pszCLayer,
              void **phCutlineRet )
 
 {
-#ifndef OGR_ENABLED
-    CPLError( CE_Failure, CPLE_AppDefined, 
-              "Request to load a cutline failed, this build does not support OGR features./n" );
-    return 1;
-#else // def OGR_ENABLED
-    OGRRegisterAll();
+//#ifndef OGR_ENABLED
+//    CPLError( CE_Failure, CPLE_AppDefined, 
+//              "Request to load a cutline failed, this build does not support OGR features./n" );
+//    return 1;
+//#else // def OGR_ENABLED
+//    OGRRegisterAll();
 
 /* -------------------------------------------------------------------- */
 /*      Open source vector dataset.                                     */
 /* -------------------------------------------------------------------- */
     OGRDataSourceH hSrcDS;
 
-    hSrcDS = OGROpen( pszCutlineDSName, FALSE, NULL );//
+    //hSrcDS = OGROpen( pszCutlineDSName, FALSE, NULL );//
+	hSrcDS = OGRSFDriverRegistrar::Open(pszCutlineDSName, FALSE );
     if( hSrcDS == NULL )
         return 1;
 
@@ -56,7 +86,8 @@ LoadCutline( const char *pszCutlineDSName, const char *pszCLayer,
     OGRLayerH hLayer = NULL;
 
     if( pszCSQL != NULL )
-        hLayer = OGR_DS_ExecuteSQL( hSrcDS, pszCSQL, NULL, NULL ); 
+         hLayer = OGR_DS_ExecuteSQL( hSrcDS, pszCSQL, NULL, NULL );
+	    //hLayer = OGR_DS_ExecuteSQL(hSrcDS,"select * from cutline where size = 100",NULL ,NULL);
     else if( pszCLayer != NULL )
         hLayer = OGR_DS_GetLayerByName( hSrcDS, pszCLayer );
     else
@@ -137,7 +168,7 @@ LoadCutline( const char *pszCutlineDSName, const char *pszCLayer,
         OGR_DS_ReleaseResultSet( hSrcDS, hLayer );
 
     OGR_DS_Destroy( hSrcDS );
-#endif
+//#endif
 }
 
 /************************************************************************/
@@ -149,7 +180,6 @@ void TransformCutlineToSource( GDALDatasetH hSrcDS, void *hCutline,
                           char ***ppapszWarpOptions, char **papszTO_In )
 
 {
-#ifdef OGR_ENABLED
     OGRGeometryH hMultiPolygon = OGR_G_Clone( (OGRGeometryH) hCutline );
     char **papszTO = CSLDuplicate( papszTO_In );
 
@@ -208,8 +238,7 @@ void TransformCutlineToSource( GDALDatasetH hSrcDS, void *hCutline,
         papszTO = CSLSetNameValue( papszTO, "DST_SRS", pszCutlineSRS_WKT );
         CPLFree( pszCutlineSRS_WKT );
     }
-
-/* -------------------------------------------------------------------- */
+	/* -------------------------------------------------------------------- */
 /*      Transform the geometry to pixel/line coordinates.               */
 /* -------------------------------------------------------------------- */
     CutlineTransformer oTransformer;
@@ -223,7 +252,7 @@ void TransformCutlineToSource( GDALDatasetH hSrcDS, void *hCutline,
     CSLDestroy( papszTO );
 
     if( oTransformer.hSrcImageTransformer == NULL )
-        return 1;
+        //return 1;
 
     OGR_G_Transform( hMultiPolygon, 
                      (OGRCoordinateTransformationH) &oTransformer );
@@ -241,7 +270,6 @@ void TransformCutlineToSource( GDALDatasetH hSrcDS, void *hCutline,
     *ppapszWarpOptions = CSLSetNameValue( *ppapszWarpOptions, 
                                           "CUTLINE", pszWKT );
     CPLFree( pszWKT );
-#endif
 }
 
 
@@ -315,7 +343,10 @@ int CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char*
     GDALAllRegister();
     void *hCutline = NULL;//hCutLine
 
-    int iRev = LoadCutline( pszAOIFile, "", "", pszSQL, &hCutline );
+	int iRev=LoadCutline( pszAOIFile, "", "", pszSQL, &hCutline );
+
+	//int iRev=LoadCutline( pszAOIFile, "cutline", pszSQL, NULL, &hCutline );  
+
 
     GDALDataset * pSrcDS = (GDALDataset*) GDALOpen(pszInFile, GA_ReadOnly);
     if (pSrcDS == NULL)
@@ -471,13 +502,9 @@ int CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char*
     psWO->hCutline = (void*) hMultiPoly;
     TransformCutlineToSource((GDALDatasetH) pSrcDS, (void*)hMultiPoly, &(psWO->papszWarpOptions), papszTO );
 
-
     GDALWarpOperation oWO;
     if (oWO.Initialize(psWO) != CE_None)
     {
-        //if(pProgress != NULL)
-        //    pProgress->SetProgressTip("转换参数错误！");
-
         GDALClose((GDALDatasetH) pSrcDS);
         GDALClose((GDALDatasetH) pDstDS);
 
@@ -498,20 +525,22 @@ int CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char*
 }
 
 
-
-
 int main()
 {
     //注册文件格式
     GDALAllRegister();
+	OGRRegisterAll();
+CPLSetConfigOption("GDAL_DATA", "E:\\work\\dview_bj\\CutImage\\CutImage\\data"); 
     
-    const char* pszAOIFile = "C:\\testdata\\cutline.shp";
-	const char* pszInFile="C:\\testdata\\wasia(tif).tif";
-	const char* pszOutFile="c:\\testdata\\cuted.tif";
+    const char* pszAOIFile = "C:\\cutdata\\cutline.shp";
+	const char* pszInFile="C:\\cutdata\\wasia(tif).tif";
+	const char* pszOutFile="C:\\cutdata\\cuted.tif";
 	//const char* 
+	//OGRDataSource *poDS = OGRSFDriverRegistrar::Open(pszAOIFile, FALSE );
 
-//CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char* pszAOIFile, const char* pszSQL, 
-//    int *pBandInex, int *piBandCount, int iBuffer, const char* pszFormat
-CutImageByAOIGDAL(pszInFile,pszOutFile, pszAOIFile,"area > 0.001",NULL,NULL,0,"tif");
-	getchar();
+	//CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char* pszAOIFile, const char* pszSQL, 
+	//    int *pBandInex, int *piBandCount, int iBuffer, const char* pszFormat
+	//CutImageByAOIGDAL(pszInFile,pszOutFile, pszAOIFile,"size = 100",NULL,NULL,0,"GTiff");
+	CutImageByAOIGDAL(pszInFile,pszOutFile, pszAOIFile,"select * from cutline where size = 100",NULL,NULL,0,"GTiff");
+	getchar();//"select * from cutline where size = 100"
 }

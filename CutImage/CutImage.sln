@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CutImage", "CutImage\CutImage.vcproj", "{D740C877-F1CB-4266-BBAA-67D52693407C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testOGR", "testOGR\testOGR.vcproj", "{9F3EE202-94F2-49B9-9496-71DC88D8A622}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{D740C877-F1CB-4266-BBAA-67D52693407C}.Debug|Win32.Build.0 = Debug|Win32
 		{D740C877-F1CB-4266-BBAA-67D52693407C}.Release|Win32.ActiveCfg = Release|Win32
 		{D740C877-F1CB-4266-BBAA-67D52693407C}.Release|Win32.Build.0 = Release|Win32
+		{9F3EE202-94F2-49B9-9496-71DC88D8A622}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9F3EE202-94F2-49B9-9496-71DC88D8A622}.Debug|Win32.Build.0 = Debug|Win32
+		{9F3EE202-94F2-49B9-9496-71DC88D8A622}.Release|Win32.ActiveCfg = Release|Win32
+		{9F3EE202-94F2-49B9-9496-71DC88D8A622}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
