@@ -36,10 +36,22 @@ public:
 #endif
 
 protected:
+	void loadbmp(CString filename);
+	void CopyWndToClipBoard(CWnd *pWnd);
+
+private:
+	CBitmap* m_pBuffer;
+	BITMAP m_bitmap;
 
 // 生成的消息映射函数
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
+public:
+	afx_msg void OnFileOpen();
+public:
+	afx_msg void OnTestClipboard();
 };
 
 #ifndef _DEBUG  // GISTryView.cpp 中的调试版本
