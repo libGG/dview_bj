@@ -424,13 +424,6 @@ namespace DView.SXEQJB.TempleteMgr.Properties {
             }
         }
         
-        internal static byte[] Thumbs {
-            get {
-                object obj = ResourceManager.GetObject("Thumbs", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap upload_32 {
             get {
                 object obj = ResourceManager.GetObject("upload_32", resourceCulture);

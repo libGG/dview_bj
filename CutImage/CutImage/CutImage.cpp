@@ -75,8 +75,8 @@ LoadCutline( const char *pszCutlineDSName, const char *pszCLayer,
 /* -------------------------------------------------------------------- */
     OGRDataSourceH hSrcDS;
 
-    //hSrcDS = OGROpen( pszCutlineDSName, FALSE, NULL );//
-	hSrcDS = OGRSFDriverRegistrar::Open(pszCutlineDSName, FALSE );
+    hSrcDS = OGROpen( pszCutlineDSName, FALSE, NULL );//
+	//hSrcDS = OGRSFDriverRegistrar::Open(pszCutlineDSName, FALSE );
     if( hSrcDS == NULL )
         return 1;
 
@@ -268,7 +268,7 @@ void TransformCutlineToSource( GDALDatasetH hSrcDS, void *hCutline,
     OGR_G_DestroyGeometry( hMultiPolygon );
 
     *ppapszWarpOptions = CSLSetNameValue( *ppapszWarpOptions, 
-                                          "CUTLINE", pszWKT );
+                                          "cutline", pszWKT );
     CPLFree( pszWKT );
 }
 
@@ -343,7 +343,7 @@ int CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char*
     GDALAllRegister();
     void *hCutline = NULL;//hCutLine
 
-	int iRev=LoadCutline( pszAOIFile, "", "", pszSQL, &hCutline );
+	int iRev=LoadCutline( pszAOIFile, "cutline", "size = 100", pszSQL, &hCutline );
 
 	//int iRev=LoadCutline( pszAOIFile, "cutline", pszSQL, NULL, &hCutline );  
 
@@ -474,6 +474,8 @@ int CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char*
     GDALTransformerFunc pfnTransformer = GDALGenImgProjTransform;
     GDALWarpOptions *psWO = GDALCreateWarpOptions();
 
+	//psWO->papszWarpOptions
+
     psWO->papszWarpOptions = CSLDuplicate(NULL);
     psWO->eWorkingDataType = dT;
     psWO->eResampleAlg = GRA_Bilinear ;
@@ -530,12 +532,16 @@ int main()
     //注册文件格式
     GDALAllRegister();
 	OGRRegisterAll();
-CPLSetConfigOption("GDAL_DATA", "E:\\work\\dview_bj\\CutImage\\CutImage\\data"); 
+	CPLSetConfigOption("GDAL_FILENAME_IS_UTF8","NO");
+	CPLSetConfigOption("GDAL_DATA", "E:\\work\\dview_bj\\CutImage\\CutImage\\data"); 
     
     const char* pszAOIFile = "C:\\cutdata\\cutline.shp";
-	const char* pszInFile="C:\\cutdata\\wasia(tif).tif";
+	const char* pszInFile= "C:\\cutdata\\wasia(tif).tif";
 	const char* pszOutFile="C:\\cutdata\\cuted.tif";
-	//const char* 
+	//const char* pszAOIFile = "C:\\cutdata\\cutline.shp";
+	//const char* pszInFile="C:\\cutdata\\wasia(tif).tif";
+	//const char* pszOutFile="C:\\cutdata\\cuted.tif";
+
 	//OGRDataSource *poDS = OGRSFDriverRegistrar::Open(pszAOIFile, FALSE );
 
 	//CutImageByAOIGDAL(const char* pszInFile, const char* pszOutFile, const char* pszAOIFile, const char* pszSQL, 
